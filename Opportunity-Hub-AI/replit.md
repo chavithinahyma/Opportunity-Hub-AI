@@ -1,6 +1,6 @@
-# [Project name]
+# Opportunity Hub AI
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+An official-source-first opportunity tracker for jobs, internships, government examinations, and future recruitment cycles.
 
 ## Run & Operate
 
@@ -22,23 +22,28 @@ _Replace the heading above with the project's name, and this line with one sente
 
 ## Where things live
 
-_Populate as you build — short repo map plus pointers to the source-of-truth file for DB schema, API contracts, theme files, etc._
+- `artifacts/opportunity-hub/src/App.tsx` — web experience, curated opportunity source links, daily refresh state, shortlist, and application-source tracking.
+- `artifacts/opportunity-hub/src/index.css` — visual theme and responsive layout.
+- `artifacts/api-server/src` — Express API scaffold; the current web experience does not depend on it for its curated source directory.
 
 ## Architecture decisions
 
-_Populate as you build — non-obvious choices a reader couldn't infer from the code (3-5 bullets)._
+- Opportunity cards link to official government or company sources rather than claiming scraped listings are live.
+- The Apply action records that the official source was opened; it never submits an application or claims an application status.
+- Future years are planning signals only. A cycle becomes final only after the organisation publishes its official notice.
 
 ## Product
 
-_Describe the high-level user-facing capabilities of this app once they exist._
+Users can browse official opportunity paths, filter by category and current status, inspect year-by-year cycle expectations, save a shortlist, open application sources, and review the local application trail.
 
 ## User preferences
 
-_Populate as you build — explicit user instructions worth remembering across sessions._
+Keep job information trustworthy and useful: avoid expired deadlines, show the source domain, clearly distinguish open/upcoming/not-announced, and include future-year context without inventing dates.
 
 ## Gotchas
 
-_Populate as you build — sharp edges, "always run X before Y" rules._
+- `PORT` is required by the Vite and API configs; run the web build with `PORT=5000` when invoking it outside a workflow.
+- The current curated directory is static and local; daily refresh updates the check timestamp but does not pretend to scrape or auto-submit applications.
 
 ## Pointers
 
