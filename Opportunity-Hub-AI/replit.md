@@ -4,6 +4,7 @@ An official-source-first opportunity tracker for jobs, internships, government e
 
 ## Run & Operate
 
+- `PORT=5000 BASE_PATH=/ pnpm --filter @workspace/opportunity-hub run dev` — run the web app in the Replit preview
 - `pnpm --filter @workspace/api-server run dev` — run the API server (port 5000)
 - `pnpm run typecheck` — full typecheck across all packages
 - `pnpm run build` — typecheck + build all packages
